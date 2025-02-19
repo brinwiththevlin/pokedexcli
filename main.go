@@ -14,7 +14,7 @@ import (
 func main() {
 	commands := getCommands()
 	cache := pokecache.NewCache(time.Second * 5)
-	cfg := &config{cache: cache}
+	cfg := &config{cache: cache, pokedex: make(map[string]pokemon)}
 
 	rl, err := readline.New("Pokedex > ")
 	if err != nil {
